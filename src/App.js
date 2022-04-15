@@ -1,7 +1,8 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './Componentes/NavBar/NavBar';
 import ItemListadoContenedor from './Componentes/Item/ItemListadoContenedor'
+import ItemDetailContenedor from './Componentes/Item/ItemDetailContenedor';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<ItemListadoContenedor />} />
           <Route exact path="/categoria/:id" element={<ItemListadoContenedor />} />
+          <Route exact path="/item/:id" element={<ItemDetailContenedor />} />
         </Routes>
       </BrowserRouter>
     </>

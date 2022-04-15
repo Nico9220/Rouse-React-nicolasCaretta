@@ -10,9 +10,9 @@ export default function NavBar() {
                 <Container>
                     <Navbar.Brand href="#home">Rouse Distribuciones</Navbar.Brand>
                     <Nav className="me-auto" >
-                        <Nav >Home</Nav>
-                        <Nav >Catálogo</Nav>
-                        <Nav >Pricing</Nav>
+                        <Nav.Link >Home</Nav.Link>
+                        <Nav.Link >Catálogo</Nav.Link>
+                        <Nav.Link >Pricing</Nav.Link>
                     </Nav>
                     <CartWidget />
                 </Container>
