@@ -8,9 +8,9 @@ const productos = [
     },
     {
         id: 2,
-        nombre: "Agujas",
+        nombre: "Fresas",
         precio: 250,
-        catergoria: "Descartables",
+        categoria: "Reutilizables",
         imagen: "https://picsum.photos/200/300/?random",
     },
     {
