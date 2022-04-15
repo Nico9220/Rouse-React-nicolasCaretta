@@ -12,8 +12,8 @@ export default function NavBar() {
                     <Navbar.Brand >Rouse Distribuciones</Navbar.Brand>
                     <Nav className="me-auto" >
                         <Link to={"/"}>Home</Link>
-                        <Link to={"/Descartables"}>Descartables</Link>
-                        <Link to={"/Reutilizables"}>Reutilizables</Link>
+                        <Link to={"/categoria/Descartables"}>Descartables</Link>
+                        <Link to={"/categoria/Reutilizables"}>Reutilizables</Link>
                     </Nav>
                     <CartWidget />
                 </Container>

@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 export default function ItemListContainer() {
     const [items, setItems] = useState([]);
 
-    const { categoryId } = useParams()
+    const { categoryId } = useParams();
     
     useEffect(() => {
         customFetch(1000, productos, categoryId)

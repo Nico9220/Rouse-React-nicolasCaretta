@@ -1,5 +1,6 @@
-import React from 'react'
-import Card from "react-bootstrap/Card"
+import React from 'react';
+import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,7 +13,7 @@ function Item({ id, nombre, precio, imagen }) {
                 <Card.Text>
                     $ {precio}
                 </Card.Text>
-
+                <Link to={`/detalle/${id}`}>Ver detalle</Link>
             </Card.Body>
         </Card>
     )

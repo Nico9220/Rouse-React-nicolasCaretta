@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import productos from '../Utils/productos';
-import filterId from '../Utils/filterId';
+import findId from '../Utils/findId';
 import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContenedor = () => {
-    const [items, setItems] = useState({});
-    const { id } = useParams()
+    const [itemDetailId, setItems] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
-        filterId(1000, productos, id)
+        findId(1000, productos, id)
             .then(resultado => setItems(resultado))
             .catch(error => console.log(error));
     }, [id])
     return (
         <>
-            
-            <ItemDetail key={items.id} nombre={items.nombre} precio={items.precio} imagen={items.imagen} />
+            <ItemDetail key={itemDetailId.id} nombre={itemDetailId.nombre} precio={itemDetailId.precio} imagen={itemDetailId.imagen} />
         </>
     );
 };
