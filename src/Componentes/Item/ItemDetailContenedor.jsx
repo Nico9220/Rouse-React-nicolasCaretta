@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import productos from '../Utils/productos';
-import customFetch from '../Utils/customFetch';
+import filterId from '../Utils/filterId';
+import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContenedor = () => {
     const [items, setItems] = useState({});
+    const { id } = useParams()
+
     useEffect(() => {
-        customFetch(2000, productos)
-            .then(res => setItems(res.find(nico => nico.id === 1)))
-    }, [])
+        filterId(1000, productos, id)
+            .then(resultado => setItems(resultado))
+            .catch(error => console.log(error));
+    }, [id])
     return (
         <>
-            <h2>Desafio: detalle de producto </h2>
+            
             <ItemDetail key={items.id} nombre={items.nombre} precio={items.precio} imagen={items.imagen} />
         </>
     );

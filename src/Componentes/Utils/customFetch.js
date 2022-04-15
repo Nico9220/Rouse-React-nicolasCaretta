@@ -1,15 +1,10 @@
-let isOk = true;
-
-const customFetch = (time, task) => {
+const customFetch = (time, task, categoryId) => {
     return new Promise((resolve, reject) => {
+        const filtroProd= task.filter(
+        (product) => product.categoria === categoryId)
         setTimeout(() => {
-            if (isOk) {
-                resolve(task);
-            } else {
-                reject("Error");
-            }
-        }, time
-        )
+            categoryId ? resolve (filtroProd) : resolve (task);
+        }, time);
     }
     )
 }
