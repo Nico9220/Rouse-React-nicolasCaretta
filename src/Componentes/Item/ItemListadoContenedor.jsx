@@ -18,8 +18,7 @@ export default function ItemListContainer() {
     }, [categoryId])
     return (
         <div className={s.containerI}>
-            <ItemListado productos={items}>
-            </ItemListado>
+            <ItemListado productos={items}></ItemListado>
         </div>
     )
 }
