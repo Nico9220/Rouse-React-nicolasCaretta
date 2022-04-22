@@ -4,10 +4,11 @@ import NavBar from './Componentes/NavBar/NavBar';
 import ItemListadoContenedor from './Componentes/Item/ItemListadoContenedor'
 import ItemDetailContenedor from './Componentes/Item/ItemDetailContenedor';
 import Cart from './Componentes/Carro/Cart';
+import CartContextProvider from './Componentes/CartContext';
 
 function App() {
   return (
-    <>
+    <CartContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </CartContextProvider>
   );
 }
 
