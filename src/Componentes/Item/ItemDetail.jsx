@@ -2,17 +2,18 @@ import React, {useState, useContext} from 'react';
 import Card from "react-bootstrap/Card"
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
-import { CartContext } from '../CartContext';
+import { useCartContext } from '../CartContext';
 
 function ItemDetail({ id, nombre, precio, imagen }) {
     const [count, setCount] = useState(0);
-    
-    const add = (cantidad) =>{
-        setCount(cantidad);
+    const { addToCart } = useCartContext()
+
+    function handleOnAdd(q) {
+        addToCart({ id, nombre, precio, imagen }, q)
     }
+
     const number = (count === 0)
 
-    let {addToCart}= useContext(CartContext);
     
     return (
         <Card key={id} style={{ width: '18rem' }}>
@@ -22,7 +23,7 @@ function ItemDetail({ id, nombre, precio, imagen }) {
                 <Card.Text>
                     $ {precio}
                 </Card.Text>
-                {number ? <ItemCount stock={5} add={addToCart}></ItemCount> : <Link to={"/Cart"}>Ir al carrito</Link>}
+                {number ? <ItemCount stock={5} onAdd={handleOnAdd}></ItemCount> : <Link to={"/Cart"}>Ir al carrito</Link>}
             </Card.Body>
         </Card>
     )
