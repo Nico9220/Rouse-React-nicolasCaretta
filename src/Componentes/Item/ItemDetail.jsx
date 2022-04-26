@@ -6,8 +6,8 @@ import { useCartContext } from '../CartContext';
 function ItemDetail({ id, nombre, precio, imagen }) {
     const { addToCart } = useCartContext()
 
-    function handleOnAdd(q) {
-        addToCart({ id, nombre, precio, imagen }, q)
+    function handleOnAdd(quantity) {
+        addToCart({ id, nombre, precio, imagen }, quantity)
     }
 
     return (
@@ -18,7 +18,7 @@ function ItemDetail({ id, nombre, precio, imagen }) {
                 <Card.Text>
                     $ {precio}
                 </Card.Text>
-                <ItemCount stock={5} onAdd={handleOnAdd}></ItemCount>
+                <ItemCount stock={5} add={handleOnAdd}></ItemCount>
             </Card.Body>
         </Card>
     )

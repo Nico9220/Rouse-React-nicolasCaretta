@@ -13,6 +13,8 @@ function CartProvider(props) {
 
     const removeItem = (id) => setCart(cart.filter(item => item.id !== id))
 
+    const buyAll = () => setCart([]);
+
     const addToCart = (item, quantity) => {
         if (isInCart(item.id)) {
             const newCart = cart.map(cartElement => {
