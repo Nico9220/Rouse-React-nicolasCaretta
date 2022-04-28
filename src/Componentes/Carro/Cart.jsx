@@ -3,7 +3,6 @@ import { CartContext } from '../CartContext'
 import { Card, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
-
 export default function Cart() {
     const { cart, removeItem, buyAll } = useContext(CartContext)
 
@@ -13,12 +12,11 @@ export default function Cart() {
     if (cart.length === 0) {
         return (
             <>
-                <div>Compra algo no seas rata!</div>
+                <div>Tu carrito esta vacio!!</div>
                 <Link to={'/'}><button>Ir al home</button></Link>
             </>
         )
     } else {
-
         return (
             <>
                 <div >

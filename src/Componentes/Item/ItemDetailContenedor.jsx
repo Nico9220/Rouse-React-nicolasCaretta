@@ -16,7 +16,7 @@ const ItemDetailContenedor = () => {
     }, [id])
     return (
         <>
-            <ItemDetail key={itemDetailId.id} nombre={itemDetailId.nombre} precio={itemDetailId.precio} imagen={itemDetailId.imagen} />
+            < ItemDetail key={itemDetailId.id} nombre={itemDetailId.nombre} precio={itemDetailId.precio} imagen={itemDetailId.imagen} id={itemDetailId.id} />
         </>
     );
 };
