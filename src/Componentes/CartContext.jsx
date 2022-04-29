@@ -27,7 +27,6 @@ function CartProvider(props) {
             setCart(prev => [...prev, { ...item, quantity }])
         }
     }
-
     return (
         <>
             <CartContext.Provider value={{ cart, setCart, addToCart, clearCart, removeItem, buyAll }}>
