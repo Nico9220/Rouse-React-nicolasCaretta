@@ -8,7 +8,7 @@ export default function Cart() {
 
     const productosTotal = cart.reduce((total, item) => total + item.quantity, 0);
 
-    const total = cart.reduce((total, item) => total + item.precio * item.quantity, 0);
+    const total = cart.reduce((total, item) => total + item.price * item.quantity, 0);
     if (cart.length === 0) {
         return (
             <>
@@ -25,11 +25,11 @@ export default function Cart() {
                 {cart.length > 0 &&
                     cart.map((item) => (
                         <Card key={item.id} style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={item.imagen} />
+                            <Card.Img variant="top" src={item.imageId} />
                             <Card.Body>
-                                <Card.Title>{item.nombre}</Card.Title>
+                                <Card.Title>{item.title}</Card.Title>
                                 <Card.Text>
-                                    $ {item.precio}
+                                    $ {item.price}
                                 </Card.Text>
                                 <Card.Text>
                                     {item.quantity}

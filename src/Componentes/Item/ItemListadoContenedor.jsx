@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemListado from "./ItemListado";
 import s from '../Item/ItemListadoContenedor.module.css'
 import { useParams } from "react-router-dom";
-import { getProductsByCategoryId } from "./itemArrayData";
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 
 
 export default function ItemListContainer() {
@@ -11,14 +11,20 @@ export default function ItemListContainer() {
     const { categoryId } = useParams();
 
     useEffect(() => {
-        /*customFetch(1000, productos, categoryId)
-            .then(resultado => setItems(resultado))
-            .catch(error => console.log(error));*/
+        const db = getFirestore();
+        const getProds = collection(db, "Productos");
+        getDocs(getProds).then((res) => {
+            console.log(res)
+            setItems(res.docs.map((item) => ({ id: item.id, ...item.data() })));
+        });
         if (categoryId) {
-            getProductsByCategoryId(categoryId).then(prods => setItems(prods));
-            console.log(categoryId)
+            const getCat = query(collection(db, "Productos"), where('categoria', '==', categoryId));
+            getDocs(getCat).then((res) => {
+                setItems(res.doc.map((item) => ({ id: item.id, ...item.data() })))
+            })
         }
-    }, [categoryId])
+    }, [categoryId]);
+    console.log(items);
     return (
         <div className={s.containerI}>
             <ItemListado productos={items}></ItemListado>

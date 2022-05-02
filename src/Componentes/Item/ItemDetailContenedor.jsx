@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import productos from '../Utils/productos';
-import findId from '../Utils/findId';
 import { useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where, getDoc, doc } from 'firebase/firestore'
 
 
 const ItemDetailContenedor = () => {
@@ -10,13 +9,17 @@ const ItemDetailContenedor = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        findId(1000, productos, id)
-            .then(resultado => setItems(resultado))
-            .catch(error => console.log(error));
-    }, [id])
+        const db = getFirestore();
+        const docRef = doc(db, "Productos", id);
+        console.log(docRef);
+        if (id) {
+            getDoc(docRef).then((prod) => { setItems({ ...prod.data() }) });
+        }
+    }, [id]);
+    console.log(itemDetailId);
     return (
         <>
-            < ItemDetail key={itemDetailId.id} nombre={itemDetailId.nombre} precio={itemDetailId.precio} imagen={itemDetailId.imagen} id={itemDetailId.id} />
+            < ItemDetail key={itemDetailId.id} title={itemDetailId.title} price={itemDetailId.price} imageId={itemDetailId.imageId} id={itemDetailId.id} categoryId={itemDetailId.categoryId} />
         </>
     );
 };

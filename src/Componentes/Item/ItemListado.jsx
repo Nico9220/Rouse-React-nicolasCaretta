@@ -7,10 +7,10 @@ function ItemListado({ productos }) {
             <Item
                 key={p.id}
                 id={p.id}
-                nombre={p.nombre}
-                precio={p.precio}
-                imagen={p.imagen}
-                categoria={p.categoria}
+                nombre={p.title}
+                precio={p.price}
+                imagen={p.imageId}
+                categoria={p.categoryId}
             />
         ))
     )
