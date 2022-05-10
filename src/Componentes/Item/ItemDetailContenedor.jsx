@@ -12,7 +12,7 @@ const ItemDetailContenedor = () => {
         const docRef = doc(db, "Productos", id);
         console.log(docRef);
         if (id) {
-            getDoc(docRef).then((prod) => { setItems({ ...prod.data() }) });
+            getDoc(docRef).then((prod) => { setItems({ id: prod.id, ...prod.data() }) });
         }
     }, [id]);
     console.log(itemDetailId);

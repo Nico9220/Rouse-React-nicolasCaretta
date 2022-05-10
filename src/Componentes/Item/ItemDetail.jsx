@@ -9,9 +9,12 @@ function ItemDetail({ categoryId, title, price, imageId, id }) {
     const { cart, addToCart } = useCartContext()
 
     function handleOnAdd(quantity) {
-        addToCart({ categoryId, title, price, imageId }, quantity)
+        addToCart({ categoryId, title, price, imageId, id }, quantity)
+
     }
-    const added = cart.find(item => item.id === categoryId);
+    const added = cart.find((item) => item.id === id);
+    console.log(added)
+
     return (
         <Card key={id} id={id} style={{ width: '18rem' }}>
             <Card.Img variant="top" src={imageId} />
@@ -20,7 +23,7 @@ function ItemDetail({ categoryId, title, price, imageId, id }) {
                 <Card.Text>
                     $ {price}
                 </Card.Text>
-                {added ? <Link to={'/Cart'}><button>Ir al carrito</button></Link> : <ItemCount stock={5} add={handleOnAdd}></ItemCount>}
+                {!added ? <ItemCount stock={5} add={handleOnAdd}></ItemCount> : <Link to={'/Cart'}><button>Ir al carrito</button></Link>}
             </Card.Body>
         </Card>
     )
