@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Button from 'react-bootstrap/Button'
 
 export default function ItemCount({ stock, add }) {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     function adding() {
         if (count < stock) {
@@ -10,7 +10,7 @@ export default function ItemCount({ stock, add }) {
         }
     }
     function subs() {
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1);
         }
     }

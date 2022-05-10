@@ -18,9 +18,9 @@ export default function ItemListContainer() {
             setItems(res.docs.map((item) => ({ id: item.id, ...item.data() })));
         });
         if (categoryId) {
-            const getCat = query(collection(db, "Productos"), where('categoria', '==', categoryId));
+            const getCat = query(collection(db, "Productos"), where('categoryId', '==', categoryId));
             getDocs(getCat).then((res) => {
-                setItems(res.doc.map((item) => ({ id: item.id, ...item.data() })))
+                setItems(res.docs.map((item) => ({ id: item.id, ...item.data() })))
             })
         }
     }, [categoryId]);

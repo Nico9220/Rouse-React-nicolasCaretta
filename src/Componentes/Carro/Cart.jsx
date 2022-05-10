@@ -4,11 +4,11 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-    const { cart, removeItem, buyAll } = useContext(CartContext)
+    const { cart, removeItem, buyAll, total } = useContext(CartContext)
 
     const productosTotal = cart.reduce((total, item) => total + item.quantity, 0);
 
-    const total = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    /*const total = cart.reduce((total, item) => total + item.price * item.quantity, 0);*/
     if (cart.length === 0) {
         return (
             <>
@@ -40,7 +40,7 @@ export default function Cart() {
                     ))}
                 <h1>Total: ${total}</h1>
                 <h3>Productos en el carro: {productosTotal}</h3>
-                <button onClick={buyAll}>Comprar todo</button>
+                <Link to={'/ContactForm'}><button>Comprar todo</button> </Link>
             </>
         )
     }
