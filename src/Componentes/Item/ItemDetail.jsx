@@ -3,9 +3,10 @@ import Card from "react-bootstrap/Card"
 import ItemCount from './ItemCount';
 import { useCartContext } from '../CartContext';
 import { Link } from 'react-router-dom';
+import './Item.css'
+import { Button } from "react-bootstrap";
 
-
-function ItemDetail({ categoryId, title, price, imageId, id }) {
+function ItemDetail({ categoryId, title, price, imageId, id, description }) {
     const { cart, addToCart } = useCartContext()
 
     function handleOnAdd(quantity) {
@@ -14,18 +15,22 @@ function ItemDetail({ categoryId, title, price, imageId, id }) {
     }
     const added = cart.find((item) => item.id === id);
     console.log(added)
-
     return (
-        <Card key={id} id={id} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={imageId} />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    $ {price}
-                </Card.Text>
-                {!added ? <ItemCount stock={5} add={handleOnAdd}></ItemCount> : <Link to={'/Cart'}><button>Ir al carrito</button></Link>}
-            </Card.Body>
-        </Card>
+        <>
+            <Card key={id} id={id} style={{ width: '18rem' }} className="estilo-detalle">
+                <Card.Img variant="top" src={imageId} />
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>
+                        {description}
+                    </Card.Text>
+                    <Card.Text>
+                        $ {price}
+                    </Card.Text>
+                    {!added ? <ItemCount stock={5} add={handleOnAdd}></ItemCount> : <Link to={'/Cart'}><Button variant="dark">Ir al carrito</Button></Link>}
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 

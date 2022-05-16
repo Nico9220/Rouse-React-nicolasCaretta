@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemListado from "./ItemListado";
-import s from '../Item/ItemListadoContenedor.module.css'
+/*import s from '../Item/ItemListadoContenedor.module.css'*/
+import './ItemListado.css'
 import { useParams } from "react-router-dom";
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
-
+import { getFirestore, collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 
 export default function ItemListContainer() {
     const [items, setItems] = useState([]);
@@ -18,7 +18,7 @@ export default function ItemListContainer() {
             setItems(res.docs.map((item) => ({ id: item.id, ...item.data() })));
         });
         if (categoryId) {
-            const getCat = query(collection(db, "Productos"), where('categoryId', '==', categoryId));
+            const getCat = query(collection(db, "Productos"), where('categoryId', '==', categoryId), orderBy('price', 'desc'));
             getDocs(getCat).then((res) => {
                 setItems(res.docs.map((item) => ({ id: item.id, ...item.data() })))
             })
@@ -26,7 +26,7 @@ export default function ItemListContainer() {
     }, [categoryId]);
     console.log(items);
     return (
-        <div className={s.containerI}>
+        <div>
             <ItemListado productos={items}></ItemListado>
         </div>
     )

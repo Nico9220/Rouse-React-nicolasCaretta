@@ -18,7 +18,7 @@ const ItemDetailContenedor = () => {
     console.log(itemDetailId);
     return (
         <>
-            < ItemDetail key={itemDetailId.id} title={itemDetailId.title} price={itemDetailId.price} imageId={itemDetailId.imageId} id={itemDetailId.id} categoryId={itemDetailId.categoryId} />
+            < ItemDetail key={itemDetailId.id} title={itemDetailId.title} price={itemDetailId.price} imageId={itemDetailId.imageId} id={itemDetailId.id} categoryId={itemDetailId.categoryId} description={itemDetailId.description} />
         </>
     );
 };

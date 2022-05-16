@@ -1,0 +1,14 @@
+.totales {}
+
+.carro-card {}
+
+.vacio {
+    display: flex;
+    justify-content: center;
+}
+
+.vacioBtn {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}

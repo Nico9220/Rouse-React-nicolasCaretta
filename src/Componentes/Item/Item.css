@@ -1,0 +1,46 @@
+.productos-card {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 2525vh;
+    border: 1px solid rgb(34, 33, 33);
+    border-radius: 10px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.scale:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.linkk {
+    width: 150px;
+    background-color: rgb(34, 33, 33);
+    border-radius: 15px;
+}
+
+.estilo-detalle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.estilo-boton {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.numero {
+    display: flex;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.agregaCarrito {
+    display: flex;
+    margin-top: 5px;
+
+}
