@@ -22,9 +22,8 @@ function Home() {
   console.log(oferta);
   return (
     <div>
-      <h1>Productos en oferta</h1>
+      <h1>Nuestras ofertas</h1>
       <ItemListado productos={oferta}></ItemListado>
-      <h1>Nuestras marcas</h1>
     </div>
   )
 }

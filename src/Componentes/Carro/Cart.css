@@ -1,14 +1,33 @@
-.totales {}
-
-.carro-card {}
-
-.vacio {
+.rouseDarkThemeVacio {
     display: flex;
     justify-content: center;
+    color: white;
+}
+
+.rouseDarkThemeVacio {
+    display: flex;
+    justify-content: center;
+    color: black;
 }
 
 .vacioBtn {
     display: flex;
     justify-content: center;
     text-decoration: none;
+}
+
+.rouseDarkThemeHuno {
+    color: white;
+}
+
+.rouseLightThemeHuno {
+    color: black;
+}
+
+.rouseDarkThemeResumen {
+    color: white;
+}
+
+.rouseLightThemeResumen {
+    color: black;
 }

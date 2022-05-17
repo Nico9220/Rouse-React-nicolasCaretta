@@ -8,6 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.darkRouseTheme {
+  background-color: #1A132F;
+}
+
+.lightRouseTheme {
+  background-color: white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

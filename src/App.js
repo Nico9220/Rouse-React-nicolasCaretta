@@ -11,27 +11,29 @@ import Home from './Componentes/Home';
 import Nosotros from './Componentes/Nosotros';
 import Contacto from './Componentes/Contacto';
 import Footer from './Footer/Footer';
+import TemaContextProvider from './Componentes/TemaContext';
 
 function App() {
   return (
     <>
-      <CartProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/Nosotros" element={<Nosotros />} />
-            <Route exact path="/Contacto" element={<Contacto />} />
-            <Route exact path="/Productos" element={<ItemListadoContenedor />} />
-            <Route exact path="/categoria/:categoryId" element={<ItemListadoContenedor />} />
-            <Route exact path="/detalle/:id" element={<ItemDetailContenedor />} />
-            <Route exact path="/cart" element={<Cart />} />
-            <Route exact path='/ContactForm' element={<ContactForm />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </CartProvider>
+      <TemaContextProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route exact path="/" element={<ItemListadoContenedor />} />
+              <Route exact path="/Nosotros" element={<Nosotros />} />
+              <Route exact path="/Contacto" element={<Contacto />} />
+              <Route exact path="/:Home" element={<Home />} />
+              <Route exact path="/categoria/:categoryId" element={<ItemListadoContenedor />} />
+              <Route exact path="/detalle/:id" element={<ItemDetailContenedor />} />
+              <Route exact path="/cart" element={<Cart />} />
+              <Route exact path='/ContactForm' element={<ContactForm />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </CartProvider>
+      </TemaContextProvider>
     </>
   );
 }

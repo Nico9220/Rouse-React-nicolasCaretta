@@ -6,3 +6,11 @@
     gap: 5px;
     padding-top: 10px;
 }
+
+.rouseDarkThemeTitulo {
+    color: white;
+}
+
+.rouseLightThemeTitulo {
+    color: black;
+}

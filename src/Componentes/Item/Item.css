@@ -15,16 +15,24 @@
     transform: scale(1.1, 1.1);
 }
 
-.linkk {
+.rouseDarkThemeLink {
     width: 150px;
-    background-color: rgb(34, 33, 33);
+    background-color: #1A132F;
     border-radius: 15px;
+    color: white;
+}
+
+.rouseLightThemeLink {
+    width: 150px;
+    background-color: white;
+    border-radius: 15px;
+    border-radius: 15px;
+    color: black;
 }
 
 .estilo-detalle {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
 }
 
 .estilo-boton {

@@ -1,8 +1,22 @@
 .foot {
     background-color: rgb(34, 33, 33);
-    color: white;
+    color: #61A4BC;
+    font-family: serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     margin-top: 20px;
+}
+
+.redes {
+    margin-left: 10px;
+}
+
+.botonesFoot {
+    margin-left: 10px;
+}
+
+.contactenosBtn {
+    text-decoration: none;
+    color: #61A4BC;
 }
