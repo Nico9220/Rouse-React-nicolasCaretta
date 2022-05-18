@@ -5,10 +5,9 @@ import { Form, Button, Modal } from 'react-bootstrap';
 import './ContactForm.css'
 import { TemaContext } from "./TemaContext";
 
-export default function ContactForm() {
+export default function ContactForm(id) {
     const { darkTheme } = useContext(TemaContext);
     const { cart, clearCart, total } = useContext(CartContext);
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -42,21 +41,32 @@ export default function ContactForm() {
         updateDoc(stockUpdate, { stock: newStock })
         return (console.log(newStock))
     })
+
+    const productosTotal = cart.reduce((total, item) => total + item.quantity, 0);
     return (
         <>
+            <div className={`${darkTheme ? 'rouseDarkThemeRes' : 'rouseLightThemeRes'}`}>
+                <h1>Resumen</h1>
+                <div className={`${darkTheme ? 'rouseDarkThemeResNum' : 'rouseLightThemeResNum'}`}>
+                    <h3>Productos en el carro: {productosTotal}</h3>
+                </div>
+                <div className={`${darkTheme ? 'rouseDarkThemeTotal' : 'rouseLightThemeTotal'}`}>
+                    <h2>Total: ${total}</h2>
+                </div>
+            </div>
             <h1 className={`${darkTheme ? 'rouseDarkThemeCheck' : 'rouseLightThemeCheck'}`}>Completar</h1>
             <div className='form-style'>
                 <Form onSubmit={(e) => { e.preventDefault(); sendOrder() }}>
-                    <input type="text" value={name} name="nameForm" id="nameForm" placeholder="name"
+                    <input type="text" value={name} name="nameForm" id="nameForm" placeholder="Apellido y Nombre"
                         onChange={(e) => setName(e.target.value)} required
                     />
-                    <input type="text" value={email} name="emailForm" id="emailForm" placeholder='email@email.com'
+                    <input type="text" value={email} name="emailForm" id="emailForm" placeholder='email@...'
                         onChange={(e) => setEmail(e.target.value)} required
                     />
                     <input type="text" value={phone} name="phoneForm" id="phoneForm" placeholder='+54(0XX)XXX-XX-XX'
                         onChange={(e) => setPhone(e.target.value)} required
                     />
-                    <input type="text" value={address} name="addressForm" id="addressForm" required placeholder='Avenida Siempre Viva 123'
+                    <input type="text" value={address} name="addressForm" id="addressForm" required placeholder='Avenida Argentina'
                         onChange={(e) => setAddress(e.target.value)}
                     />
                     {

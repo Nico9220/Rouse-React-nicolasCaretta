@@ -8,3 +8,34 @@
 }
 
 .rouseLightThemeCheck {}
+
+.rouseDarkThemeRes {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.rouseLightThemeRes {
+    display: flex;
+    flex-direction: column;
+}
+
+.rouseDarkThemeResNum {
+    display: flex;
+    justify-content: center;
+}
+
+.rouseLightThemeResNum {
+    display: flex;
+    justify-content: center;
+}
+
+.rouseDarkThemeTotal {
+    display: flex;
+    justify-content: center;
+}
+
+.rouseLightThemeTotal {
+    display: flex;
+    justify-content: center;
+}

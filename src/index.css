@@ -25,4 +25,5 @@ h1 {
   display: flex;
   justify-content: center;
   font-family: serif;
+  text-decoration: underline;
 }
