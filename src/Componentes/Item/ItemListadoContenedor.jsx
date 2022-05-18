@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import ItemListado from "./ItemListado";
-/*import s from '../Item/ItemListadoContenedor.module.css'*/
 import './ItemListado.css'
 import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where, orderBy } from 'firebase/firestore';
@@ -27,7 +26,7 @@ export default function ItemListContainer() {
     }, [categoryId]);
     return (
         <div>
-            <h1 className={`${darkTheme ? 'rouseDarkThemeTitulo' : 'rouseLightThemeTitulo'}`}>Todos nuestros productos</h1>
+            <h1 className={`${darkTheme ? 'rouseDarkThemeTitulo' : 'rouseLightThemeTitulo'}`}>Productos</h1>
             <ItemListado productos={items}></ItemListado>
         </div>
     )

@@ -5,7 +5,7 @@ import CartWidget from "../CartWidget";
 import { Link } from "react-router-dom";
 import BotonTema from "../BotonTema";
 import { TemaContext } from "../TemaContext";
-import './NavBar.css'
+import './NavBar.css';
 
 export default function NavBar() {
     const { darkTheme } = useContext(TemaContext);

@@ -10,7 +10,7 @@ import ContactForm from './Componentes/ContactForm';
 import Home from './Componentes/Home';
 import Nosotros from './Componentes/Nosotros';
 import Contacto from './Componentes/Contacto';
-import Footer from './Footer/Footer';
+import Footer from './Componentes/Footer/Footer';
 import TemaContextProvider from './Componentes/TemaContext';
 
 function App() {

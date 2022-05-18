@@ -21,7 +21,7 @@ export default function Cart() {
     } else {
         return (
             <>
-                <h1 className={`${darkTheme ? 'rouseDarkThemeHuno' : 'rouseLightThemeHuno'}`}>Listado de compras</h1>
+                <h1 className={`${darkTheme ? 'rouseDarkThemeHuno' : 'rouseLightThemeHuno'}`}>Checkout</h1>
                 <div className="carro-card">
                     {cart.length > 0 &&
                         cart.map((item) => (
@@ -41,7 +41,7 @@ export default function Cart() {
                         ))}
                 </div>
                 <div className={`${darkTheme ? 'rouseDarkThemeResumen' : 'rouseLightThemeResumen'}`}>
-                    <h2 >Resumen</h2>
+                    <h2>Resumen</h2>
                     <ul><h3>Productos en el carro: {productosTotal}</h3></ul>
                     <ul><h2>Total: ${total}</h2></ul>
                     <ul><Link to={'/ContactForm'}><Button variant="dark">Comprar todo</Button> </Link></ul>

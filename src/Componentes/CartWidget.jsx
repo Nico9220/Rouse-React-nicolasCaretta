@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import CartIMG from "../Carrito/carrito-de-compras.png";
 import { CartContext } from "./CartContext";
 
-
-
 export default function CartWidget() {
     let { cart } = useContext(CartContext);
     return (
         <>
-            <Link to={'/Cart'}><span style={{ color: "aqua" }}>{cart.length}<img width="50px" height="auto" src={CartIMG} alt="logo" /></span></Link>
+            <Link to={'/Cart'}><span style={{ color: "#61A4BC", padding: "10px" }}>{cart.length}<img width="50px" height="auto" src={CartIMG} alt="logo" /></span></Link>
         </>
     )
 }

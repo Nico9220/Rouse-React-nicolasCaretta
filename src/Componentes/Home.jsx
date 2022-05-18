@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ItemListado from './Item/ItemListado'
 import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { TemaContext } from "./TemaContext";
+import './Home.css';
 
 function Home() {
+  const { darkTheme } = useContext(TemaContext);
   const [oferta, setOferta] = useState([]);
 
   const { Home } = useParams();
@@ -22,7 +25,7 @@ function Home() {
   console.log(oferta);
   return (
     <div>
-      <h1>Nuestras ofertas</h1>
+      <h1 className={`${darkTheme ? 'rouseDarkThemeOfertas' : 'rouseLightThemeOfertas'}`}>Nuestras ofertas</h1>
       <ItemListado productos={oferta}></ItemListado>
     </div>
   )

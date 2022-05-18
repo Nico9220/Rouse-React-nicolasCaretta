@@ -39,15 +39,15 @@ function BotonTema() {
         },
     }));
 
+
     return (
         <FormGroup>
             <FormControlLabel
                 control={<Android12Switch onClick={() => { toggleDarkTheme(); console.log(darkTheme) }} />}
             />
-            <Stack direction="row" spacing={1} alignItems="center">
-            </Stack>
+            <Stack direction="row" spacing={1} alignItems="center"></Stack>
         </FormGroup>
     );
 }
 
-export default BotonTema
+export default BotonTema;

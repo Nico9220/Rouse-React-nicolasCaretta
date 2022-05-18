@@ -1,8 +1,12 @@
 import React, { useState, useContext } from 'react'
-import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, getFirestore, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { CartContext } from './CartContext';
 import { Form, Button, Modal } from 'react-bootstrap';
+import './ContactForm.css'
+import { TemaContext } from "./TemaContext";
+
 export default function ContactForm() {
+    const { darkTheme } = useContext(TemaContext);
     const { cart, clearCart, total } = useContext(CartContext);
 
     const [name, setName] = useState('');
@@ -10,6 +14,8 @@ export default function ContactForm() {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [orderCode, setOrderCode] = useState('');
+    const db = getFirestore();
+    let newStock = 0;
 
     const order = {
         buyer: { name: name, phone: phone, email: email, address: address },
@@ -18,7 +24,6 @@ export default function ContactForm() {
         date: serverTimestamp()
     }
     const sendOrder = () => {
-        const db = getFirestore();
         const orderCollection = collection(db, 'Orders');
         addDoc(orderCollection, order).then(({ id }) => {
             setOrderCode(id);
@@ -28,9 +33,19 @@ export default function ContactForm() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    cart.map(prod => {
+        const stockUpdate = doc(db, 'Productos', prod.id)
+        if (prod.stock > 0) {
+            newStock = (prod.stock - prod.quantity)
+        }
+        updateDoc(stockUpdate, { stock: newStock })
+        return (console.log(newStock))
+    })
     return (
         <>
-            <div>
+            <h1 className={`${darkTheme ? 'rouseDarkThemeCheck' : 'rouseLightThemeCheck'}`}>Completar</h1>
+            <div className='form-style'>
                 <Form onSubmit={(e) => { e.preventDefault(); sendOrder() }}>
                     <input type="text" value={name} name="nameForm" id="nameForm" placeholder="name"
                         onChange={(e) => setName(e.target.value)} required
@@ -46,8 +61,8 @@ export default function ContactForm() {
                     />
                     {
                         cart.length === 0 ?
-                            <Button variant="contained" disabled>Enviar</Button> :
-                            <Button onClick={handleOpen} type="submit" variant="contained">Enviar</Button>
+                            <Button variant="dark" disabled>Enviar</Button> :
+                            <Button onClick={handleOpen} type="submit" variant="dark">Enviar</Button>
                     }
                 </Form>
                 {

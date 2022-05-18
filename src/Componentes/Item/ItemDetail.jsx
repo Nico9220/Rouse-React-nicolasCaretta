@@ -5,11 +5,11 @@ import { useCartContext } from '../CartContext';
 import './Item.css'
 import DetalleCompra from '../DetalleCompra'
 
-function ItemDetail({ categoryId, title, price, imageId, id, description }) {
+function ItemDetail({ categoryId, title, price, imageId, id, description, stock }) {
     const { cart, addToCart } = useCartContext()
 
     function handleOnAdd(quantity) {
-        addToCart({ categoryId, title, price, imageId, id }, quantity)
+        addToCart({ categoryId, title, price, imageId, id, stock }, quantity)
 
     }
     const added = cart.find((item) => item.id === id);
@@ -26,7 +26,7 @@ function ItemDetail({ categoryId, title, price, imageId, id, description }) {
                     <Card.Text>
                         $ {price}
                     </Card.Text>
-                    {!added ? <ItemCount stock={5} add={handleOnAdd}></ItemCount> : <DetalleCompra />}
+                    {!added ? <ItemCount stock={stock} add={handleOnAdd}></ItemCount> : <DetalleCompra />}
                 </Card.Body>
             </Card>
         </>

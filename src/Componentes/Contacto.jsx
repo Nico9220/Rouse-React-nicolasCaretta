@@ -28,7 +28,7 @@ function Contacto() {
                 </div>
                 <div className="mb-3">
                     <label for="exampleFormControlTextarea1" className="form-label">Comentarios</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Deje su consulta...'></textarea>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Deje su consulta aquí...'></textarea>
                 </div>
                 <Button variant="dark">Enviar</Button>
             </form>
