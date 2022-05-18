@@ -66,7 +66,7 @@ export default function ContactForm(id) {
                     <input type="text" value={phone} name="phoneForm" id="phoneForm" placeholder='+54(0XX)XXX-XX-XX'
                         onChange={(e) => setPhone(e.target.value)} required
                     />
-                    <input type="text" value={address} name="addressForm" id="addressForm" required placeholder='Avenida Argentina'
+                    <input type="text" value={address} name="addressForm" id="addressForm" required placeholder='Avenida Papuli'
                         onChange={(e) => setAddress(e.target.value)}
                     />
                     {
