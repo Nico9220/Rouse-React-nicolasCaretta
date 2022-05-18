@@ -11,7 +11,7 @@ export default function NavBar() {
     const { darkTheme } = useContext(TemaContext);
     return (
         <>
-            <Navbar bg="dark" variant="dark" className={`${darkTheme ? 'rouseDarkThemeNavBar' : 'rouseLightThemeNavBar'}`}>
+            <Navbar bg="dark" variant="dark" expand="lg" className={`${darkTheme ? 'rouseDarkThemeNavBar' : 'rouseLightThemeNavBar'}`}>
                 <Container>
                     <Navbar.Brand as={Link} to={"/"}>Rouse Distribuciones</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,10 +26,13 @@ export default function NavBar() {
                                 <NavDropdown.Item as={Link} to={"/Home"}> Ofertas </NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to={"/Contacto"}> Contacto</Nav.Link>
+                            <div className="cart-boton">
+                                <CartWidget />
+                                <BotonTema />
+                            </div>
+
                         </Nav>
                     </Navbar.Collapse>
-                    <CartWidget />
-                    <BotonTema />
                 </Container>
             </Navbar>
         </>
