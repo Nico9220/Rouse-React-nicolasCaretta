@@ -48,7 +48,7 @@ export default function ContactForm(id) {
             <div className={`${darkTheme ? 'rouseDarkThemeRes' : 'rouseLightThemeRes'}`}>
                 <h1>Resumen</h1>
                 <div className={`${darkTheme ? 'rouseDarkThemeResNum' : 'rouseLightThemeResNum'}`}>
-                    <h3>Productos en el carro: {productosTotal}</h3>
+                    <h3>Cantidad de items: {productosTotal}</h3>
                 </div>
                 <div className={`${darkTheme ? 'rouseDarkThemeTotal' : 'rouseLightThemeTotal'}`}>
                     <h2>Total: ${total}</h2>
