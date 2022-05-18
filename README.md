@@ -2,7 +2,7 @@
 <h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="PROYECTO_FINAL__REACT__CODER_HOUSE_1"></a>PROYECTO FINAL - REACT  “CODER HOUSE”</h2>
 <p class="has-line-data" data-line-start="4" data-line-end="5">El proyecto de “Rouse Distribuciones” corresponde a un E-commerce desarrollado en React y conectado a Firebase.</p>
 <h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Demo_6"></a>Demo</h2>
-![DEMO](https://user-images.githubusercontent.com/92279256/169168521-efe81f74-a14d-431e-85ef-445ddbc12218.gif)
+![DEMO](https://user-images.githubusercontent.com/92279256/169170021-3a8ff96a-7156-4dd7-8d28-a77808bfbe76.gif)
 
 
 <h2 class="code-line" data-line-start=8 data-line-end=9 ><a id="Objetivos_8"></a>Objetivos</h2>
