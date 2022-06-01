@@ -26,6 +26,8 @@
 npm clone <a href="https://github.com/Nico9220/Rouse-React-nicolasCaretta.git">https://github.com/Nico9220/Rouse-React-nicolasCaretta.git</a></p>
 <h2 class="code-line" data-line-start=29 data-line-end=30 ><a id="Firebase_29"></a>Firebase</h2>
 <p class="has-line-data" data-line-start="30" data-line-end="31">Se utiliza la version 9.7.0 de Firebase.</p>
+<h2 class="code-line" data-line-start=32 data-line-end=33 ><a id="Autor_32"></a>Deploy</h2>
+https://desafio-firebase-1618f.web.app/
 <h2 class="code-line" data-line-start=32 data-line-end=33 ><a id="Autor_32"></a>Autor</h2>
 <p class="has-line-data" data-line-start="33" data-line-end="35">Nicolas Caretta<br>
 Proyecto desarrollado para la entrega final del curso de React de Coder House.</p>
